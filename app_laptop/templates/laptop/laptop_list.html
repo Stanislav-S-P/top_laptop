@@ -1,0 +1,26 @@
+{% extends "laptop/basic.html" %}
+{% block title %}Результаты поиска{% endblock %}
+{% block content %}
+
+{% if laptop %}
+    <h3 class="laptop-list__title title-reset">Результаты поиска</h3>
+    <h4 class="laptop-list__count title-reset">Найдено ноутбуков: {{ count_obj }}</h4>
+    {% for elem in laptop %}
+    <article class="laptop-list__article">
+        <div class="laptop-list__container flex">
+            <img class="laptop-list__image" src="{{ elem.image }}" alt="Изображение ноутбука">
+            <span class="laptop-list__price">{{ elem.price }} ₽</span>
+            <div class="laptop-list__link-container">
+                <a class="laptop-list__link" href="{% url 'detail_laptop' elem.id %}">{{ elem.title }}</a>
+            </div>
+        </div>
+    </article>
+    {% endfor %}
+{% else %}
+    <h3 class="laptop-list__title title-reset">Ничего не найдено</h3>
+    <p class="laptop-list__descr top_descr">В данный момент, ноутбуки по заданным критериям, отсутствуют</p>
+    <p class="laptop-list__descr bottom_descr">Попробуйте повторить запрос, используя другие критерии.</p>
+{% endif %}
+<a class="main__link-main" href="{% url 'search' %}">На главную</a>
+
+{% endblock %}

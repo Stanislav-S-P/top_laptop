@@ -1,0 +1,35 @@
+{% extends "laptop/basic.html" %}
+{% block title %}Поиск ноутбуков{% endblock %}
+{% block content %}
+
+<h3 class="laptop-list__title title-reset">Поиск</h3>
+<div class="form__container">
+    <form class="form__form flex" method="post">
+        {% csrf_token %}
+        <div class="form__block flex">
+            <h4 class="form__title title-reset">Бренд</h4>
+            <span class="form__field">{{ form.brand }}</span>
+        </div>
+        <div class="form__block flex">
+            <h4 class="form__title title-reset">Процессор</h4>
+            <span class="form__field">{{ form.processor }}</span>
+        </div>
+        <div class="form__block flex">
+            <h4 class="form__title title-reset">RAM</h4>
+            <span class="form__field">{{ form.ram }}</span>
+        </div>
+        <div class="form__block flex">
+            <h4 class="form__title title-reset">Видеокарта</h4>
+            <span class="form__field">{{ form.video_card }}</span>
+        </div>
+        <div class="form__block flex">
+            <h4 class="form__title title-reset">Накопитель</h4>
+            <span class="form__field">{{ form.drive }}</span>
+        </div>
+        <div class="form__btn__block flex">
+            <button class="form__btn btn-reset" type="submit">Найти</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "laptop/basic.html" %}
+{% block title %}{{ laptop.title }}{% endblock %}
+{% block content %}
+
+<h2>{{ laptop.title }}</h2>
+<div class="laptop-detail__container">
+    <div class="laptop-detail__top">
+        <img class="laptop-detail__image" src="{{ laptop.image }}" alt="Изображение ноутбука">
+        <span class="laptop-detail__price-key">Стоимость:</span>
+        <span class="laptop-detail__price-value">{{ laptop.price }} ₽</span>
+    </div>
+    <div class="laptop-detail__bottom flex">
+        <div class="laptop-detail__left flex">
+            <span class="laptop-detail__key">Бренд:</span>
+            <span class="laptop-detail__key">Процессор:</span>
+            <span class="laptop-detail__key">Количество ядер:</span>
+            <span class="laptop-detail__key">Кэш-память:</span>
+            <span class="laptop-detail__key">Оперативная память:</span>
+            <span class="laptop-detail__key">Экран:</span>
+            <span class="laptop-detail__key">Разрешение:</span>
+            <span class="laptop-detail__key">Видеокарта:</span>
+            <span class="laptop-detail__key">Звук:</span>
+            <span class="laptop-detail__key">Накопитель:</span>
+            <span class="laptop-detail__key">Беспроводная связь:</span>
+            <span class="laptop-detail__key">Порты:</span>
+            <span class="laptop-detail__key">Дополнительные устройства:</span>
+            <span class="laptop-detail__key">Устройства ввода:</span>
+            <span class="laptop-detail__key">Материал корпуса:</span>
+            <span class="laptop-detail__key">Материал крышки:</span>
+            <span class="laptop-detail__key">Вес:</span>
+            <span class="laptop-detail__key">Батарея:</span>
+        </div>
+        <div class="laptop-detail__right flex">
+            <span class="laptop-detail__value">{{ laptop.brand }}</span>
+            <span class="laptop-detail__value">{{ laptop.processor }}</span>
+            <span class="laptop-detail__value">{{ laptop.cores }}</span>
+            <span class="laptop-detail__value">{{ laptop.cache_memory }}</span>
+            <span class="laptop-detail__value">{{ laptop.ram }}</span>
+            <span class="laptop-detail__value">{{ laptop.screen }}</span>
+            <span class="laptop-detail__value">{{ laptop.resolution }}</span>
+            <span class="laptop-detail__value">{{ laptop.video_card }}</span>
+            <span class="laptop-detail__value">{{ laptop.sound }}</span>
+            <span class="laptop-detail__value">{{ laptop.drive }}</span>
+            <span class="laptop-detail__value">{{ laptop.wireless_connection }}</span>
+            <span class="laptop-detail__value">{{ laptop.ports }}</span>
+            <span class="laptop-detail__value">{{ laptop.additional_devices }}</span>
+            <span class="laptop-detail__value">{{ laptop.input_devices }}</span>
+            <span class="laptop-detail__value">{{ laptop.housing_material }}</span>
+            <span class="laptop-detail__value">{{ laptop.cover_material }}</span>
+            <span class="laptop-detail__value">{{ laptop.weight }}</span>
+            <span class="laptop-detail__value">{{ laptop.battery }}</span>
+        </div>
+    </div>
+</div>
+<a class="main__link-main laptop-detail__link" href="javascript:history.go(-1)">Назад</a>
+<a class="main__link-main laptop-detail__link" href="{% url 'search' %}">На главную</a>
+
+{% endblock %}
